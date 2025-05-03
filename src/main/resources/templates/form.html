@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+</head>
+<body>
+
+<form th:action="@{/confirm}" th:object="${Student}" method="post">
+
+    <input type="text"  placeholder="FirstName" th:field="*{firstName}">
+    <br>
+    <br>
+    <input type="text"  placeholder="lastName" th:field="*{lastName}">
+    <br>
+    <br>
+    <input type="text"  placeholder="Department" th:field="*{dept}">
+
+    <br>
+    <br>
+    <br>
+
+    Select your State :
+    <select th:field="*{state}">
+        <option  th:each="tempState : ${States}"
+                 th:text="${tempState}"
+                 th:value="${tempState}"
+                 />
+</select>
+
+
+
+
+
+
+
+    <br>
+    <br>
+
+    <button type="submit"> Submit </button>
+
+
+</form>
+
+
+
+
+</body>
+</html>
